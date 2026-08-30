@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+Debug/
+Release/
+x64/
+x86/
+
+# Build files
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+
+# Visual Studio user settings
+*.user
+*.suo
+
+# Temporary files
+*.tmp
+*.log
+
+# Runtime data
+ranking.txt
+
+# Audio files
+*.wav
