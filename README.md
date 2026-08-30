@@ -238,7 +238,7 @@ UPru-GitHub/
 
 プレイ動画：
 
-`ここに動画URLを掲載予定`
+▶ [「UPる」紹介動画（YouTube）](https://youtu.be/RliOehawBnQ)
 
 ゲームの基本操作、各種ギミック、ステージ進行、クリアまでの流れを動画で確認できます。
 
