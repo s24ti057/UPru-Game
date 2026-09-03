@@ -259,13 +259,10 @@ void drawCenteredText(const char* text, float y)
 
     const char* p = text;
 
+    // 文字列の横幅を計算
     while (*p)
     {
-        textWidth += glutBitmapWidth(
-            GLUT_BITMAP_HELVETICA_18,
-            *p
-        );
-
+        textWidth += glutBitmapWidth(GLUT_BITMAP_HELVETICA_18, *p);
         p++;
     }
 
@@ -281,11 +278,7 @@ void drawCenteredText(const char* text, float y)
 
     while (*p)
     {
-        glutBitmapCharacter(
-            GLUT_BITMAP_HELVETICA_18,
-            *p
-        );
-
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p);
         p++;
     }
 }
@@ -301,35 +294,7 @@ void drawCenteredValue(const char* label, int value, float y)
 
 // スタート画面の描画
 void drawStartScreen() {
-    // --背景--
-   /* glColor3f(0.08f, 0.10f, 0.20f);
-    drawFilledRectangle(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
-    
-    // --上部60％:タイトル--
-    glColor3f(1.0f, 1.0f, 1.0f);
-    // タイトル1行目
-    glRasterPos3f(335.0f, 460.0f, 0.0f);
 
-    const char* title = "JUST CLIMB...";
-
-    while (*title) {
-        glutBitmapCharacter(
-            GLUT_BITMAP_TIMES_ROMAN_24,
-            *title
-        );
-
-        ++title;
-    }
-
-    // --上部60％と下部40％の境界線--
-    glColor3f(0.8f, 0.8f, 0.8f);
-    glLineWidth(2.0f);
-
-    glBegin(GL_LINES);
-    glVertex2f(80.0f, 240.0f);
-    glVertex2f(720.0f, 240.0f);
-    glEnd();
-    */
     // タイトル背景の描画
     DrawTitleBackground(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
     // タイトル画面用キャラクター
@@ -408,11 +373,8 @@ void drawStartScreen() {
 
 // タイム画面の描画
 void drawTimeScreen() {
+    
     // 背景
-    /*
-    glColor3f(0.08f, 0.10f, 0.20f);
-    drawFilledRectangle(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
-    */
     TimeTexture(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
     
     // タイトル
@@ -541,11 +503,7 @@ void drawClearScreen()
         str = timeText;
         while (*str)
         {
-            glutBitmapCharacter(
-                GLUT_BITMAP_HELVETICA_18,
-                *str
-            );
-
+            glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *str);
             str++;
         }
 
@@ -567,10 +525,7 @@ void drawClearScreen()
 
         while (*p)
         {
-            titleWidth += glutStrokeWidth(
-                GLUT_STROKE_ROMAN,
-                *p
-            );
+            titleWidth += glutStrokeWidth(GLUT_STROKE_ROMAN, *p);
             p++;
         }
 
@@ -590,10 +545,7 @@ void drawClearScreen()
 
         while (*p)
         {
-            glutStrokeCharacter(
-                GLUT_STROKE_ROMAN,
-                *p
-            );
+            glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
             p++;
         }
         glPopMatrix();
@@ -641,8 +593,8 @@ void drawClearScreen()
     // 4枚目
     if (clearPage == 3)
     {
-        DrawResultTexture(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT); // リザルト画面の背景描画
-
+        // リザルト画面の背景描画
+        DrawResultTexture(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
         glColor3f(1.0f, 1.0f, 0.0f);
 
         // CLEAR TIME 
@@ -702,91 +654,10 @@ void drawPlayTime()
     const char* str = timeText;
 
     while (*str) {
-        glutBitmapCharacter(
-            GLUT_BITMAP_HELVETICA_18,
-            *str
-        );
-
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *str);
         ++str;
     }
 }
-
-// 背景描画関数 
-
-void drawGameBackground()
-{
-    // 氷エリア
-    if (player.y >= 6000.0f) {
-
-        // 水色の背景
-        glColor3f(0.65f, 0.85f, 0.95f);
-        drawFilledRectangle(
-            0.0f,
-            0.0f,
-            GAME_WIDTH,
-            14000.0f
-        );
-
-        // 上側を少し白くして、冷たい雰囲気を出す
-        if (player.y >= 8500.0f)
-        {
-            glColor3f(0.82f, 0.94f, 1.0f);
-            drawFilledRectangle(
-                0.0f,
-                0.0f,
-                GAME_WIDTH,
-                11500.0f
-            );
-        }
-
-        // 氷の筋のような模様
-        glColor3f(0.90f, 0.98f, 1.0f);
-        glLineWidth(2.0f);
-
-        glBegin(GL_LINES);
-
-        glVertex2f(50.0f, 500.0f);
-        glVertex2f(250.0f, 350.0f);
-
-        glVertex2f(300.0f, 550.0f);
-        glVertex2f(470.0f, 420.0f);
-
-        glVertex2f(550.0f, 500.0f);
-        glVertex2f(750.0f, 330.0f);
-
-        glVertex2f(80.0f, 200.0f);
-        glVertex2f(220.0f, 100.0f);
-
-        glVertex2f(500.0f, 220.0f);
-        glVertex2f(680.0f, 100.0f);
-
-        glEnd();
-    }
-
-    // 通常エリア
-    else {
-        // 空
-        glColor3f(0.32f, 0.52f, 0.28f);
-        drawFilledRectangle(0.0f, 0.0f, GAME_WIDTH, 6000.0f);
-
-        // 遠くの木（少し暗い）
-        glColor3f(0.08f, 0.25f, 0.08f);
-        /*
-        drawTree(80.0f, 120.0f);
-        drawTree(210.0f, 80.0f);
-        drawTree(360.0f, 160.0f);
-        drawTree(520.0f, 100.0f);
-        drawTree(690.0f, 140.0f); 
-        */
-    }
-}
-
-/*
-void drawGameBackground1()
-{
-    DrawForestBackground(0.0f, 0.0f, (float)winW, (float)winH);
-}
-*/
 
 // 加速壁の描画関数
 void drawBoostWall(const Wall& w) {
@@ -992,12 +863,12 @@ void drawGameScene()
     }
     else
     {
-        // 通常カメラ
+        // 通常カメラ(描画位置をずらすことでカメラが追従しているようにしている)
         glTranslatef(-cameraX, -cameraY, 0.0f);
     }
 
-    DrawBackground((float)winW);
-    GoalFlagTexture(450, 13020, 100, 100);
+    DrawBackground((float)winW); // ゲーム背景画像描画
+    GoalFlagTexture(450, 13020, 100, 100); // ゴール旗描画
 
 
     // 風エリアを薄い水色で表示
@@ -1278,7 +1149,7 @@ void UpdateTitleBGM()
     }
 }
 
-// ゴールBGM開始
+// ゴールBGM開 始
 void StartGoalBGM()
 {
     mciSendString(TEXT("close goal"), NULL, 0, NULL);
@@ -1456,14 +1327,12 @@ void specialKey(int key, int x, int y) {
         if (key == GLUT_KEY_UP)
         {
             pauseMenuIndex--;
-
             if (pauseMenuIndex < 0) pauseMenuIndex = 1;
         }
 
         if (key == GLUT_KEY_DOWN)
         {
             pauseMenuIndex++;
-
             if (pauseMenuIndex > 1) pauseMenuIndex = 0;
         }
 
@@ -1658,7 +1527,7 @@ void keyboardUp(unsigned char key, int x, int y) {
             player.vy = power;
             player.vx = 6.0f + jumpCharge * 0.2f;  // ← 横方向も強化できる
             playerDirection = 1; // 右向きに更新
-            wallKickTimer = 12; // 8フレームだけキック画像
+            wallKickTimer = 12; // 12フレームだけキック画像
       
             PlayJumpSound();
             jumpCount++;   // ジャンプ数カウント
@@ -1676,7 +1545,7 @@ void keyboardUp(unsigned char key, int x, int y) {
             player.vy = power;
             player.vx = -6.0f - jumpCharge * 0.2f;
             playerDirection = -1; // 左向きに更新
-            wallKickTimer = 12; // 8フレームだけキック画像
+            wallKickTimer = 12; // 12フレームだけキック画像
            
             PlayJumpSound();
             jumpCount++;   // ジャンプ数カウント
@@ -1711,7 +1580,6 @@ void timer(int t) {
         if (titleAnimationTimer >= 6)
         {
             titleAnimationTimer = 0;
-
             titleAnimationStep++;
 
             if (titleAnimationStep >= 4)
@@ -1940,6 +1808,7 @@ void timer(int t) {
         }
     }
 
+    // 壁キック画像タイマー
     if (wallKickTimer > 0)
     {
         wallKickTimer--;
@@ -1990,7 +1859,8 @@ void timer(int t) {
     }
 
 
-    // 足場への着地を横衝突より先に処理
+    // 足場への着地を横衝突より先に処理(足場の角に着地するときの誤判定を防ぐため)
+    // 上から来たならまず着地扱い、それ以外なら横衝突などを調べるという優先順位にする
     bool landedOnWall = false;
 
     if (player.vy <= 0.0f) {
@@ -2081,11 +1951,12 @@ void timer(int t) {
         float newWallTop = w.y + w.h;
 
         // 前フレームの位置(prevX, prevY)と比較して、どの方向から壁に入ってきたかを判定
+        // 壁の左面に衝突した
         bool hitLeft =
             prevX + player.w <= w.x &&   // 前フレームは左側
             player.x + player.w > w.x;   // 今フレームで重なった
 
-
+        // 壁の右面に衝突した
         bool hitRight =
             prevX >= w.x + w.w &&        // 前フレームは右側
             player.x < w.x + w.w;        // 今フレームで重なった
@@ -2115,7 +1986,7 @@ void timer(int t) {
 
                 state = AIR;
                 KeyStickON = false;
-                reflectCooldown = 15;  // 5フレーム横移動禁止（調整可）
+                reflectCooldown = 15;  // 15フレーム横移動禁止（調整可）
 
                 break;
             }
@@ -2154,7 +2025,7 @@ void timer(int t) {
 
                 state = AIR;
                 KeyStickON = false;
-                reflectCooldown = 15;  // 5フレーム横移動禁止（調整可）
+                reflectCooldown = 15;  // 15フレーム横移動禁止（調整可）
 
                 break;
             }
@@ -2393,7 +2264,7 @@ int main(int argc, char** argv) {
     walls[1] = { 760, 0, 40, 770, WALL_NORMAL };    // 右壁
 
     // 特殊壁（例：中央に配置）
-    walls[2] = { 0, 300, 40, 1050, WALL_NO_STICK };   // ← 張り付けない壁
+    walls[2] = { 0, 300, 40, 1050, WALL_NO_STICK };
     walls[3] = { 0, 1350, 40, 240, WALL_NORMAL };
 
     walls[4] = { 300, 200, 200, 20, WALL_NORMAL };
