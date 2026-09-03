@@ -406,40 +406,6 @@ void InitTexture(){
 	);
 }
 
-/*
-void DrawForestBackground(float x, float y, float width, float height)
-{
-	if (forestTexture == 0)
-	{
-		return;
-	}
-
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, forestTexture);
-
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-
-	glBegin(GL_QUADS);
-
-	glTexCoord2f(0.0f, 0.0f);
-	glVertex2f(x, y);
-
-	glTexCoord2f(1.0f, 0.0f);
-	glVertex2f(x + width, y);
-
-	glTexCoord2f(1.0f, 1.0f);
-	glVertex2f(x + width, y + height);
-
-	glTexCoord2f(0.0f, 1.0f);
-	glVertex2f(x, y + height);
-
-	glEnd();
-
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glDisable(GL_TEXTURE_2D);
-}
-*/
-
 // cameraYに応じて背景画像を選択する
 void DrawBackground(float screenWidth){
 
@@ -519,10 +485,12 @@ void DrawPlayerTexture(float x, float y, float width, float height, int animatio
 	DrawTextureFlipped(texture, x, y, width, height, flipX);
 }
 
+// タイトル背景画像描画関数
 void DrawTitleBackground(float x, float y, float width, float height) {
 	DrawTexture(titleTexture, x, y, width, height);
 }
 
+// タイトル画面キャラクターアニメーション描画関数
 void DrawTitlePlayerTexture(float x, float y, float width, float height, int animationStep) {
 	GLuint texture = titleIdle1Texture;
 
@@ -553,6 +521,7 @@ void DrawTitlePlayerTexture(float x, float y, float width, float height, int ani
 
 }
 
+// ゴール演出キャラクターアニメーション描画関数
 void DrawGoalPlayerTexture(float x, float y, float width, float height, int animationStep)
 {
 	GLuint texture = goal1Texture;
