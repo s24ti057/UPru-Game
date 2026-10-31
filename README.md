@@ -215,28 +215,20 @@ F3キーでデバッグモードを切り替え、以下の情報を確認でき
 
 ---
 
+## 開発環境・使用技術
 
+### 開発環境
 
-## 開発・環境確認
+- **OS**：Windows 11
+- **IDE**：Visual Studio Community
+- **使用言語**：C / C++
 
-- OS：Windows 11
-- IDE：Visual Studio Community
-- 言語：C/C++
-- グラフィックス：OpenGL / GLUT
-- ビルド構成：Release
-- プラットフォーム：x86 (Win32)
+### 使用ライブラリ・API
 
-
----
-
-## 外部ライブラリ
-
-本作品では、以下の外部ライブラリ・APIを使用しています。
-
-- OpenGL：ゲーム画面の描画
-- GLUT：ウィンドウ生成、入力処理など
-- stb_image：画像ファイルの読み込み
-- WinMM：BGM・効果音の再生
+- **OpenGL**：ゲーム画面やテクスチャの描画
+- **GLUT**：ウィンドウ生成・入力処理
+- **stb_image**：画像ファイルの読み込み
+- **WinMM（Windows Multimedia API）**：BGM・効果音の再生
 
 ---
 
