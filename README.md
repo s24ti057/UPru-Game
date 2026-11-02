@@ -365,6 +365,22 @@ OpenGLの `GL_REPEAT` を利用し、壁のサイズに応じて画像を繰り�
   提供：効果音ラボ
   公式ウェブサイトURL：https://soundeffect-lab.info/
 
+- **反射壁SE**：「短いひと跳ね(音程3)」
+  提供：こんとどぅふぇ
+  公式ウェブサイトURL：https://conte-de-fees.com/
+
+- **加速壁SE**：「消滅・移動音4」
+　提供：効果音工房
+　公式ウェブサイトURL：https://umipla.com/
+
+- **加速床SE**：「消滅音2」
+　提供：効果音工房
+　公式ウェブサイトURL：https://umipla.com/
+
+- **氷壁SE**：「氷の成長音」
+　提供：ElevenLabs
+　公式ウェブサイトURL：https://elevenlabs.io/
+
 
 ---
 
