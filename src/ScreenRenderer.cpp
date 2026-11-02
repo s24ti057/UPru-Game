@@ -301,12 +301,41 @@ void drawClearScreen(int clearPage, int clearTime, int jumpCount, int fallCount)
         drawCenteredText("Confirm Button 20", 230.0f);
         drawCenteredText("SE : Sound Effect Lab", 200.0f);
 
+        // REFLECT WALL SE
+        drawCenteredText("REFLECT WALL SE", 130.0f);
+        drawCenteredText("Short Hop (Pitch 3)", 100.0f);
+        drawCenteredText("SE : Conte de Fees", 70.0f);
+
 
         return;
     }
 
     // 4枚目
-    if (clearPage == 3)
+    if (clearPage == 3) 
+    {
+        glColor3f(1.0f, 1.0f, 1.0f);
+
+        // BOOST WALL SE
+        drawCenteredText("BOOST WALL SE", 420.0f);
+        drawCenteredText("Vanish / Movement SFX 4", 390.0f);
+        drawCenteredText("SE : Sound Effects Workshop", 360.0f);
+
+        // BOOST FLOOR SE
+        drawCenteredText("BOOST FLOOR SE", 290.0f);
+        drawCenteredText("Vanish SFX 2", 260.0f);
+        drawCenteredText("SE : Sound Effects Workshop", 230.0f);
+
+        // ICE WALL
+        drawCenteredText("ICE WALL SE", 160.0f);
+        drawCenteredText("Ice Growth Sound", 130.0f);
+        drawCenteredText("SE : ElevenLabs", 100.0f);
+        drawCenteredText("Official Website : https://elevenlabs.io/", 70.0f);
+
+        return;
+    }
+
+    // 5枚目
+    if (clearPage == 4)
     {
         // リザルト画面の背景描画
         DrawResultTexture(0.0f, 0.0f, GAME_WIDTH, GAME_HEIGHT);
