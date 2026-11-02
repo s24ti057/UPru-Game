@@ -107,3 +107,78 @@ void Audio::playChargeMaxSound()
 {
 	mciSendString(TEXT("play charge from 0"), NULL, 0, NULL);
 }
+
+// 反射壁SE
+void Audio::playReflectSound()
+{
+	PlaySound(TEXT("reflect.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+}
+
+// 加速壁SE
+void Audio::playBoostSound()
+{
+	PlaySound(TEXT("boost.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+}
+
+// 加速床SE
+void Audio::playBoostXSound()
+{
+	PlaySound(TEXT("boostX.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+}
+
+// 氷壁SE再生・ループ
+void Audio::updateIceSound(bool isSlidingIce)
+{
+    // 氷壁を滑り続けているか
+    if (isSlidingIce)
+    {
+        // 再生していなければ開始
+        if (!iceSoundPlaying)
+        {
+            MCIERROR err = mciSendString(TEXT("open \"ice.wav\" type waveaudio alias ice"),NULL, 0, NULL);
+
+            if (err != 0)
+                return;
+
+            err = mciSendString(TEXT("play ice"), NULL, 0, NULL);
+
+            if (err != 0)
+            {
+                mciSendString(TEXT("close ice"), NULL, 0, NULL);
+                return;
+            }
+
+            iceSoundPlaying = true;
+        }
+        else
+        {
+            // 再生終了後にループ
+            TCHAR mode[32] = {};
+
+            if (mciSendString(TEXT("status ice mode"), mode, 32, NULL) == 0)
+            {
+                if (_tcscmp(mode, TEXT("stopped")) == 0)
+                {
+                    mciSendString(TEXT("play ice from 0"), NULL, 0, NULL);
+                }
+            }
+        }
+    }
+    else
+     // 氷壁から離れたとき
+    {
+        stopIceSound();
+    }
+}
+
+// 氷壁SE停止
+void Audio::stopIceSound()
+{
+    if (!iceSoundPlaying)
+        return;
+
+    mciSendString(TEXT("stop ice"), NULL, 0, NULL);
+    mciSendString(TEXT("close ice"), NULL, 0, NULL);
+
+    iceSoundPlaying = false;
+}
