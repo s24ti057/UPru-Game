@@ -346,23 +346,23 @@ OpenGLの `GL_REPEAT` を利用し、壁のサイズに応じて画像を繰り�
 ### BGM / SE
 
 - **タイトルBGM**：「Far Horizon」  
-  音楽：Yuki Nozawa
-  「ノザワ音楽工房」公式ウェブサイトURL：https://yuki-nozawa.com/
+  提供：Yuki Nozawa（ノザワ音楽工房）  
+  公式ウェブサイトURL：https://yuki-nozawa.com/
 
 - **ステージBGM**：「Never Surrender」  
-  音楽：ユーフルカ
-  「ユーフルカ」公式ウェブサイトURL：https://youfulca.com/
+  提供：ユーフルカ  
+  公式ウェブサイトURL：https://youfulca.com/
 
 - **ゴールBGM**：「星のカーニバル」  
-  音楽：もみじばミュージック
+  提供：もみじばミュージック  
   公式ウェブサイトURL：https://music.storyinvention.com/
 
 - **ジャンプSE**  
-  提供：無料効果音で遊ぼう!
+  提供：無料効果音で遊ぼう!  
   公式ウェブサイトURL：https://taira-komori.net/
 
 - **最大ジャンプSE**  
-  提供：効果音ラボ
+  提供：効果音ラボ  
   公式ウェブサイトURL：https://soundeffect-lab.info/
 
 - **反射壁SE**：「短いひと跳ね(音程3)」  
