@@ -384,7 +384,7 @@ OpenGLの `GL_REPEAT` を利用し、壁のサイズに応じて画像を繰り�
 
 プレイ動画：
 
-▶ [「UPる」紹介動画（YouTube）](https://youtu.be/RliOehawBnQ)
+▶ [「UPる」紹介動画（YouTube）](https://youtu.be/d_WiBe1uIS4)
 
 ゲームの基本操作、各種ギミック、ステージ進行、クリアまでの流れを動画で確認できます。
 
